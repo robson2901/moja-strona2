@@ -1,15 +1,161 @@
 <!DOCTYPE html>
-<html lang ="pl">
-  <head>
-    <meta charset="UTF-8">
-    <title>Moja Strona</title>
-    <style>
-      body { font-family: Arial; text-align: center; margin-top: 50px; }
-      h1 { color: darkblue; }
-    </style>
-  </head>
-  <body>
-<h1>Witaj na Mojej Stronie </h1>
-<p>Strona dziala dzieki sdojjufe </p>
-  </body>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luxury Collection</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0e0e0e;
+      --card: #161616;
+      --gold: #c9a24d;
+      --text: #f5f5f5;
+      --muted: #b3b3b3;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(180deg, #0b0b0b, #111);
+      color: var(--text);
+    }
+
+    header {
+      padding: 80px 20px 60px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      color: var(--muted);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto 100px;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: radial-gradient(circle at top, #1c1c1c, var(--card));
+      border-radius: 20px;
+      padding: 40px 30px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent, rgba(201,162,77,0.15), transparent);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+    }
+
+    .card:hover::before { opacity: 1; }
+
+    .card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+
+    .card p {
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    .price {
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: var(--gold);
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      border-radius: 30px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      text-decoration: none;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .btn:hover {
+      background: var(--gold);
+      color: #000;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--muted);
+      font-size: 0.85rem;
+      border-top: 1px solid #222;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Luxury Collection</h1>
+  <p>Ekskluzywna selekcja produktów premium stworzonych dla osób ceniących jakość, design i prestiż.</p>
+</header>
+
+<section class="products">
+  <div class="card">
+    <h2>Zegarek Prestige</h2>
+    <p>Ręcznie wykończony zegarek mechaniczny z szafirowym szkłem i skórzanym paskiem klasy premium.</p>
+    <div class="price">€4 900</div>
+    <a href="#" class="btn">ZOBACZ WIĘCEJ</a>
+  </div>
+
+  <div class="card">
+    <h2>Skórzana Aktówka</h2>
+    <p>Aktówka wykonana z włoskiej skóry naturalnej, idealna dla biznesu i eleganckiego stylu życia.</p>
+    <div class="price">€1 250</div>
+    <a href="#" class="btn">ZOBACZ WIĘCEJ</a>
+  </div>
+
+  <div class="card">
+    <h2>Pióro Signature</h2>
+    <p>Ekskluzywne pióro wieczne z metalową obudową i precyzyjną stalówką, stworzone do podpisów najwyższej rangi.</p>
+    <div class="price">€890</div>
+    <a href="#" class="btn">ZOBACZ WIĘCEJ</a>
+  </div>
+</section>
+
+<footer>
+  © 2025 Luxury Collection · All rights reserved
+</footer>
+
+</body>
 </html>
